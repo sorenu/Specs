@@ -21,11 +21,13 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '5.0'
 
-  s.source_files = 'Authentication', 'Authentication/**/*.{h,m}', 'Categories', 'Core', 'Extensions', 'Extensions/**/', 'Utilities', 'Vendor', 'Vendor/**/*.{h,m}'
+  s.source_files = 'Vendor/CocoaLumberjack', 'Vendor/CocoaAsyncSocket', 'Vendor/KissXML/**/*.{h,m}', 'Vendor/libidn/idn-int.h', 'Vendor/libidn/stringprep.h', 'Authentication', 'Categories', 'Core', 'Utilities'
 
   s.public_header_files = 'XMPP.h'
 
-  s.libraries = 'libxml2'
+  s.ios.frameworks = 'CFNetwork', 'Security'
+
+  s.libraries = 'libxml2', 'libresolv'
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
 
   s.requires_arc = true
