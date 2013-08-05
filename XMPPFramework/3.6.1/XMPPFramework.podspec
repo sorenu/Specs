@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
 
   s.public_header_files = 'XMPP.h'
 
-  s.libraries = 'libxml'
+  s.libraries = 'libxml2'
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
 
   s.requires_arc = true
